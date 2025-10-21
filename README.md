@@ -6,8 +6,6 @@ A GrapesJS plugin that seamlessly integrates Alpine.js directives into the visua
 
 > **Try it live!** [Demo Link](##)
 
-![GrapesJS AlpineJS Plugin](https://via.placeholder.com/800x400?text=GrapesJS+AlpineJS+Plugin)
-
 ### Quick Start
 
 ```html
@@ -35,46 +33,35 @@ const editor = grapesjs.init({
 
 ## Features
 
-✨ **Alpine.js Traits** - Add Alpine.js directives to any component via the Trait Manager  
-🎨 **Pre-built Blocks** - Ready-to-use interactive components (Accordion, Tabs, Modal, Counter)  
-👁️ **Live Preview** - See Alpine.js interactivity work directly in the canvas  
-📦 **Clean Export** - Export fully functional HTML with Alpine.js directives  
+Alpine.js Traits** - Add Alpine.js directives to any component via the Trait Manager
+Live Preview** - See Alpine.js interactivity work directly in the canvas
+**Clean Export** - Export fully functional HTML with Alpine.js directives
 
 ## Summary
 
 * Plugin name: `grapesjs-alpinejs`
-* Components
-    * `alpine-accordion` - Collapsible accordion component
-    * `alpine-tabs` - Tab navigation component
-    * `alpine-modal` - Modal dialog component
-    * `alpine-counter` - Simple counter component
-* Blocks
-    * `alpine-accordion` - Accordion block
-    * `alpine-tabs` - Tabs block
-    * `alpine-modal` - Modal block
-    * `alpine-counter` - Counter block
 * Alpine.js Traits (available for all components)
-    * `x-data` - Define reactive data scope
-    * `x-show` - Toggle visibility
-    * `x-if` - Conditional rendering
-    * `x-on:click` - Click event handler
-    * `x-on:submit` - Submit event handler
-    * `x-bind:class` - Dynamic class binding
-    * `x-bind:disabled` - Dynamic disabled state
-    * `x-model` - Two-way data binding
-    * `x-for` - List rendering
-    * `x-text` - Text content binding
-    * `x-html` - HTML content binding
-    * `x-transition` - Transition effects
+  * `x-data` - Define reactive data scope
+  * `x-show` - Toggle visibility
+  * `x-if` - Conditional rendering
+  * `x-on:click` - Click event handler
+  * `x-on:submit` - Submit event handler
+  * `x-bind:class` - Dynamic class binding
+  * `x-bind:disabled` - Dynamic disabled state
+  * `x-model` - Two-way data binding
+  * `x-for` - List rendering
+  * `x-text` - Text content binding
+  * `x-html` - HTML content binding
+  * `x-transition` - Transition effects
 
 ## Options
 
-| Option | Description | Default |
-|-|-|-
-| `alpineCdn` | CDN URL for Alpine.js library | `https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js` |
-| `categoryLabel` | Label for Alpine.js trait category | `Alpine.js` |
-| `blockCategory` | Label for Alpine.js block category | `Alpine.js` |
-| `i18n` | Custom internationalization messages | `{}` |
+
+| Option          | Description                          | Default                                                       |
+| ----------------- | -------------------------------------- | --------------------------------------------------------------- |
+| `alpineCdn`     | CDN URL for Alpine.js library        | `https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js` |
+| `categoryLabel` | Label for Alpine.js trait category   | `Alpine.js`                                                   |
+| `i18n`          | Custom internationalization messages | `{}`                                                          |
 
 ## Download
 
@@ -135,16 +122,8 @@ const editor = grapesjs.init({
 
 ## How to Use
 
-### 1. Using Pre-built Blocks
 
-Simply drag and drop any Alpine.js block from the block manager into your canvas:
-
-- **Accordion**: Collapsible content panels
-- **Tabs**: Tab-based navigation
-- **Modal**: Modal dialog boxes
-- **Counter**: Simple increment/decrement counter
-
-### 2. Adding Alpine.js Directives to Any Component
+### 1. Adding Alpine.js Directives to Any Component
 
 1. Select any component in the canvas
 2. Open the Trait Manager panel
@@ -152,9 +131,10 @@ Simply drag and drop any Alpine.js block from the block manager into your canvas
 4. Add any Alpine.js directive (x-data, x-show, x-on:click, etc.)
 5. See the interactivity work in real-time!
 
-### 3. Exporting Your Work
+### 2. Exporting Your Work
 
 When you export your HTML:
+
 - All Alpine.js directives are included in the HTML attributes
 - Remember to include Alpine.js in your final webpage:
 

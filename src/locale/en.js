@@ -1,12 +1,5 @@
 export default {
   'grapesjs-alpinejs': {
-    // Block labels
-    blocks: {
-      accordion: 'Accordion',
-      tabs: 'Tabs',
-      modal: 'Modal',
-      counter: 'Counter',
-    },
     // Trait labels
     traits: {
       'x-data': 'Alpine Data',

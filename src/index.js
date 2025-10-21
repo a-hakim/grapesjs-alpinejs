@@ -1,14 +1,10 @@
-import loadComponents from './components';
-import loadBlocks from './blocks';
 import en from './locale/en';
 
 export default (editor, opts = {}) => {
   const options = {
     i18n: {},
     alpineCdn: 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js',
-    // Category names
     categoryLabel: 'Alpine.js',
-    blockCategory: 'Alpine.js',
     traitLabels: {
       'x-data': 'Data',
       'x-show': 'Show',
@@ -25,12 +21,6 @@ export default (editor, opts = {}) => {
     },
     ...opts
   };
-
-  // Add components
-  loadComponents(editor, options);
-  
-  // Add blocks
-  loadBlocks(editor, options);
   
   // Load i18n files
   editor.I18n && editor.I18n.addMessages({
@@ -211,8 +201,8 @@ export default (editor, opts = {}) => {
             name: 'x-transition',
             label: options.traitLabels['x-transition'] || 'x-transition',
             category: options.categoryLabel,
-            valueTrue: '',  // Alpine.js expects empty string when present
-            valueFalse: undefined,  // Remove attribute when unchecked
+            valueTrue: '',
+            valueFalse: undefined,
           },
         ];
 
