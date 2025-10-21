@@ -94,7 +94,25 @@ Live Preview** - See Alpine.js interactivity work directly in the canvas
       plugins: ['grapesjs-alpinejs'],
       pluginsOpts: {
         'grapesjs-alpinejs': {
-          alpineCdn: 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js'
+          // Alpine.js CDN URL (Alpine.js 3.x)
+          alpineCdn: 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js',
+          // Category labels
+          categoryLabel: 'Interactivity (Alpine.js)',
+          // Trait labels
+          traitLabels: {
+            'x-data': 'Data',
+            'x-show': 'Show',
+            'x-if': 'If',
+            'x-on:click': 'Click',
+            'x-on:submit': 'Submit',
+            'x-bind:class': 'Bind Class',
+            'x-bind:disabled': 'Bind Disabled',
+            'x-model': 'Model',
+            'x-for': 'For',
+            'x-text': 'Text',
+            'x-html': 'HTML',
+            'x-transition': 'Transition',
+          },
         }
       }
   });
@@ -200,4 +218,4 @@ MIT
 
 ## Credits
 
-Built with ❤️ using [GrapesJS](https://grapesjs.com/) and [Alpine.js](https://alpinejs.dev/)
+Built by [A.Hakim](https://github.com/a-hakim/) with ❤️ using [GrapesJS](https://grapesjs.com/) and [Alpine.js](https://alpinejs.dev/)
