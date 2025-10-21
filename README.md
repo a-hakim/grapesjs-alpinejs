@@ -6,6 +6,8 @@ A GrapesJS plugin that seamlessly integrates Alpine.js directives into the visua
 
 > **Try it live!** [Demo Link](##)
 
+![Preview](https://raw.githubusercontent.com/a-hakim/grapesjs-alpinejs/main/preview.png)
+
 ### Quick Start
 
 ```html
