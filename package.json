@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-alpinejs",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "GrapesJS plugin to integrates Alpine.js directives, allowing reactive components.",
   "main": "dist/index.js",
   "repository": {

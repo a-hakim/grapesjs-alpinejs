@@ -6,18 +6,18 @@ export default (editor, opts = {}) => {
     alpineCdn: 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js',
     categoryLabel: 'Alpine.js',
     traitLabels: {
-      'x-data': 'Data',
-      'x-show': 'Show',
-      'x-if': 'If',
-      'x-on:click': 'On Click',
-      'x-on:submit': 'On Submit',
-      'x-bind:class': 'Bind Class',
-      'x-bind:disabled': 'Bind Disabled',
-      'x-model': 'Model',
-      'x-for': 'For',
-      'x-text': 'Text',
-      'x-html': 'innerHTML',
-      'x-transition': 'Transition',
+      'x-data': 'x-data',
+      'x-show': 'x-show',
+      'x-if': 'x-if',
+      'x-on:click': 'x-on:click',
+      'x-on:submit': 'x-on:submit',
+      'x-bind:class': 'x-bind:class',
+      'x-bind:disabled': 'x-bind:disabled',
+      'x-model': 'x-model',
+      'x-for': 'x-for',
+      'x-text': 'x-text',
+      'x-html': 'x-html',
+      'x-transition': 'x-transition',
     },
     ...opts
   };
@@ -52,16 +52,15 @@ export default (editor, opts = {}) => {
   const defaultType = domc.getType('default');
   const defaultModel = defaultType.model;
 
-  domc.addType('default', {
-    model: {
-      defaults: {
-        ...defaultModel.prototype.defaults,
-        traits: [
-          ...defaultModel.prototype.defaults.traits,
-        ],
-      },
+  const allTypes = domc.getTypes();
 
+  allTypes.forEach((type) => {
+    const model = type.model;
+    type.model = model.extend({
       init() {
+        // Call the original init method
+        model.prototype.init.apply(this, arguments);
+        
         // Add Alpine.js traits dynamically
         this.addAlpineTraits();
         
@@ -121,63 +120,63 @@ export default (editor, opts = {}) => {
           {
             type: 'textarea',
             name: 'x-data',
-            label: options.traitLabels['x-data'] || 'x-data',
+            label: options.traitLabels['x-data'],
             placeholder: '{ count: 0 }',
             category: options.categoryLabel,
           },
           {
             type: 'text',
             name: 'x-show',
-            label: options.traitLabels['x-show'] || 'x-show',
+            label: options.traitLabels['x-show'],
             placeholder: 'isVisible',
             category: options.categoryLabel,
           },
           {
             type: 'text',
             name: 'x-if',
-            label: options.traitLabels['x-if'] || 'x-if',
+            label: options.traitLabels['x-if'],
             placeholder: 'condition',
             category: options.categoryLabel,
           },
           {
             type: 'text',
             name: 'x-on:click',
-            label: options.traitLabels['x-on:click'] || 'x-on:click',
+            label: options.traitLabels['x-on:click'],
             placeholder: 'count++',
             category: options.categoryLabel,
           },
           {
             type: 'text',
             name: 'x-on:submit',
-            label: options.traitLabels['x-on:submit'] || 'x-on:submit',
+            label: options.traitLabels['x-on:submit'],
             placeholder: 'handleSubmit',
             category: options.categoryLabel,
           },
           {
             type: 'text',
             name: 'x-bind:class',
-            label: options.traitLabels['x-bind:class'] || 'x-bind:class',
+            label: options.traitLabels['x-bind:class'],
             placeholder: "{ 'active': isActive }",
             category: options.categoryLabel,
           },
           {
             type: 'text',
             name: 'x-bind:disabled',
-            label: options.traitLabels['x-bind:disabled'] || 'x-bind:disabled',
-            placeholder: 'isDisabled (define in x-data first)',
+            label: options.traitLabels['x-bind:disabled'],
+            placeholder: 'isDisabled',
             category: options.categoryLabel,
           },
           {
             type: 'text',
             name: 'x-model',
-            label: options.traitLabels['x-model'] || 'x-model',
-            placeholder: 'inputValue (define in x-data first)',
+            label: options.traitLabels['x-model'],
+            placeholder: 'inputValue',
             category: options.categoryLabel,
           },
           {
             type: 'textarea',
             name: 'x-for',
-            label: options.traitLabels['x-for'] || 'x-for',
+            label: options.traitLabels['x-for'],
             placeholder: 'item in items',
             category: options.categoryLabel,
             changeProp: 1,
@@ -185,21 +184,21 @@ export default (editor, opts = {}) => {
           {
             type: 'text',
             name: 'x-text',
-            label: options.traitLabels['x-text'] || 'x-text',
+            label: options.traitLabels['x-text'],
             placeholder: 'message',
             category: options.categoryLabel,
           },
           {
             type: 'textarea',
             name: 'x-html',
-            label: options.traitLabels['x-html'] || 'x-html',
+            label: options.traitLabels['x-html'],
             placeholder: 'htmlContent',
             category: options.categoryLabel,
           },
           {
             type: 'checkbox',
             name: 'x-transition',
-            label: options.traitLabels['x-transition'] || 'x-transition',
+            label: options.traitLabels['x-transition'],
             category: options.categoryLabel,
             valueTrue: '',
             valueFalse: undefined,
@@ -220,6 +219,7 @@ export default (editor, opts = {}) => {
           }
         });
       },
-    },
+    });
   });
+
 };
