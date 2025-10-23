@@ -4,7 +4,7 @@ export default (editor, opts = {}) => {
   const options = {
     i18n: {},
     alpineCdn: 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js',
-    categoryLabel: 'Alpine.js',
+    categoryLabel: 'Interactivity (Alpine.js)',
     traitLabels: {
       'x-data': 'x-data',
       'x-show': 'x-show',
@@ -116,69 +116,76 @@ export default (editor, opts = {}) => {
       },
 
       addAlpineTraits() {
+        // Define category with open: false to collapse by default
+        const alpineCategory = {
+          id: 'alpine-category',
+          label: options.categoryLabel,
+          open: false,
+        };
+
         const alpineTraits = [
           {
             type: 'textarea',
             name: 'x-data',
             label: options.traitLabels['x-data'],
             placeholder: '{ count: 0 }',
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'text',
             name: 'x-show',
             label: options.traitLabels['x-show'],
             placeholder: 'isVisible',
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'text',
             name: 'x-if',
             label: options.traitLabels['x-if'],
             placeholder: 'condition',
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'text',
             name: 'x-on:click',
             label: options.traitLabels['x-on:click'],
             placeholder: 'count++',
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'text',
             name: 'x-on:submit',
             label: options.traitLabels['x-on:submit'],
             placeholder: 'handleSubmit',
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'text',
             name: 'x-bind:class',
             label: options.traitLabels['x-bind:class'],
             placeholder: "{ 'active': isActive }",
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'text',
             name: 'x-bind:disabled',
             label: options.traitLabels['x-bind:disabled'],
             placeholder: 'isDisabled',
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'text',
             name: 'x-model',
             label: options.traitLabels['x-model'],
             placeholder: 'inputValue',
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'textarea',
             name: 'x-for',
             label: options.traitLabels['x-for'],
             placeholder: 'item in items',
-            category: options.categoryLabel,
+            category: alpineCategory,
             changeProp: 1,
           },
           {
@@ -186,20 +193,20 @@ export default (editor, opts = {}) => {
             name: 'x-text',
             label: options.traitLabels['x-text'],
             placeholder: 'message',
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'textarea',
             name: 'x-html',
             label: options.traitLabels['x-html'],
             placeholder: 'htmlContent',
-            category: options.categoryLabel,
+            category: alpineCategory,
           },
           {
             type: 'checkbox',
             name: 'x-transition',
             label: options.traitLabels['x-transition'],
-            category: options.categoryLabel,
+            category: alpineCategory,
             valueTrue: '',
             valueFalse: undefined,
           },
